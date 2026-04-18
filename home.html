@@ -12,7 +12,12 @@
     <body>
       <header class ='top-bar'>
         <button class="money">money </button>
-        <img class = "shop-icon" src="images/shop-icon.png" alt="shopping bag">
+
+        <!-- This is the shop display -->
+        <img class = "shop-icon" id ="shopBtn" src="images/shop-icon.png" alt="shopping bag">
+
+        <!-- Start of pop up window  -->
+        
 
 
         <h1 class ="title">Budget Your Life</h1>
@@ -37,6 +42,23 @@
 
     <div class="charc-space">
       <img class="charc" src="images/charc.png">
+      <img id="shirtLayer" class="shirt-layer">
+      <img id="hairLayer">
+      <div id="shopModal" class="modal">
+
+          <!-- This is the shop content -->
+            
+            <ul class = "tabs"> 
+              <li class = "tab-name" id = "inv">Inventory</li>
+              <li class = "tab-name" id = "hairtab">Hair</li>
+              <li class = "tab-name" id = "faceTab">Face</li>
+              <li class = "tab-name" id = "shirtTab">Shirts</li>
+              <li class = "tab-name" id = "pantTab">Pants</li>
+              <span id="closeBtn">&times;</span>
+            </ul>
+            <div id="shopItems"></div>
+
+        </div>
     </div>
   <div class ="budget-sec">
     <ul class="time">
@@ -55,6 +77,7 @@
   <!-- Hidden Nav Menu -->
  
   <script src="menu.js"></script>
+  <script src="shop.js"></script>
   
 
 </body>
