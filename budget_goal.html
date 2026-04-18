@@ -8,7 +8,127 @@
 </head>
 
 <body>
-    
+    <header>
+        <nav>
+            <button class = "nav-btn" id="openForm">Insert Category</button>
+            <button class = "nav-btn" id="openExpenseForm">Insert Expense</button>
+            <button class = "nav-btn" id="openShortForm">Insert Short Term</button>
+            <button class = "nav-btn" id="openLongForm">Insert Long Term</button>
+        </nav>
+
+        <!-- CATEGORY FORM BUTTON -->
+            <dialog id = "categoryForm">
+                <form method="dialog">
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required>
+                    <br>
+                    <button type="submit">Add</button>
+                    <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                </form>
+            </dialog>
+        
+        <!-- EXPENSE FORM BUTTON -->
+            <dialog id = "expenseForm">
+                <form method="dialog">
+                    <label for="expense">Expense:</label>
+                    <input type="text" id="expense" name="expense" required>
+                    <br>
+                    <button type="submit">Add</button>
+                    <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                </form>
+            </dialog>
+
+        <!-- SHORT TERM FORM BUTTON -->
+            <dialog id = "shortForm">
+                <form method="dialog">
+                    <label for="short">Short Term Goal:</label>
+                    <input type="text" id="short" name="short" required>
+                    <br>
+                    <button type="submit">Add</button>
+                    <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                </form>
+            </dialog>
+
+        <!-- LONG TERM FORM BUTTON -->
+            <dialog id = "longForm">
+                <form method="dialog">
+                    <label for="long">Long Term Goal:</label>
+                    <input type="text" id="long" name="long" required>
+                    <br>
+                    <button type="submit">Add</button>
+                    <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                </form>
+            </dialog>
+
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        /*FORM BUTTONS*/
+            const categoryDialog = document.getElementById('categoryForm');
+            const expenseDialog = document.getElementById('expenseForm');
+            const shortDialog = document.getElementById('shortForm');
+            const longDialog = document.getElementById('longForm');
+
+            document.getElementById('openForm').onclick = () => categoryDialog.showModal();
+            document.getElementById('openExpenseForm').onclick = () => expenseDialog.showModal();
+            document.getElementById('openShortForm').onclick = () => shortDialog.showModal();
+            document.getElementById('openLongForm').onclick = () => longDialog.showModal();
+
+        /*ADD ROW TO TABLE (Category)*/
+            const categoryForm = categoryDialog.querySelector('form');
+            const tableBody = document.querySelector('table tbody');
+
+            categoryForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const categoryInput = document.getElementById('category');
+                const categoryValue = categoryInput.value;
+
+                const col = document.createElement('th');
+
+                const cell1 = document.createElement('td');
+                cell1.textContent = categoryValue;
+
+                col.appendChild(cell1);
+                tableBody.appendChild(col);
+
+                categoryInput.value = "";
+                categoryDialog.close();
+            });
+        
+        /*ADD EXPENSE TO CATEGORY*/
+            const expenseForm = expenseDialog.querySelector('form');
+
+            expenseForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const expenseInput = document.getElementById('expense');
+                const expenseValue = expenseInput.value;
+
+                const row = document.createElement('tr');
+
+                const cell1 = document.createElement('td');
+                cell1.textContent = expenseValue;
+
+                row.appendChild(cell1);
+                tableBody.appendChild(row);
+
+                expenseInput.value = "";
+                expenseDialog.close();
+            });
+
+    </script>
 </body>
 
 
