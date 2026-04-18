@@ -11,6 +11,23 @@ a {
 }
 
 .bar {
-  
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+  position: relative;
+  background: #9a0718;
+}
+
+.tab {
+  background: #f2c9a7;
+  color: #d86666;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 40px;
+  padding: 10px 0;
+  text-align: center;
+  flex: 1;
 }
 

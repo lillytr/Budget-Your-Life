@@ -12,14 +12,14 @@
         <div class = "bar">
             <div class = "tab">Budget</div>
             <div class = "tab">Goals</div>
+            <a href = "home.html"><button class="home-btn" id="homeBtn"><img href = "https://www.flaticon.com/free-icon/home_2550264?term=home&page=1&position=4&origin=tag&related_id=2550264"></button></a>
             <button class="plus-btn" id="plusBtn">+</button>
-
-            <div class="dropdown-menu" id="dropdownMenu">
-                <button class = "nav-btn" id="openForm">Insert Category</button>
-                <button class = "nav-btn" id="openExpenseForm">Insert Expense</button>
-                <button class = "nav-btn" id="openShortForm">Insert Short Term</button>
-                <button class = "nav-btn" id="openLongForm">Insert Long Term</button>
-            </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <button class = "nav-btn" id="openForm">Insert Category</button>
+                    <button class = "nav-btn" id="openExpenseForm">Insert Expense</button>
+                    <button class = "nav-btn" id="openShortForm">Insert Short Term</button>
+                    <button class = "nav-btn" id="openLongForm">Insert Long Term</button>
+                </div>
         </div>
 
         <!-- CATEGORY FORM BUTTON -->
@@ -87,6 +87,9 @@
 
     <script>
         const categories = [];
+        const shortGoals = [];
+        const longGoals  = [];
+        const NUM_ROWS   = 8;
 
         /*FORM BUTTONS*/
             const categoryDialog = document.getElementById('categoryForm');
@@ -127,7 +130,7 @@
             expenseForm.addEventListener('submit', function(e) {
                 e.preventDefault(); 
 
-                const expenseInput = document.getElementById('expense');
+                const expenseInput = document.getElementById('expenseForm');
                 const expenseValue = expenseInput.value;
 
                 const row = document.createElement('tr');
@@ -141,6 +144,34 @@
                 expenseInput.value = "";
                 expenseDialog.close();
             });
+
+        /*ADD SHORT TERM GOAL*/
+        document.getElementById('addShortBtn').onclick = () => {
+        const text     = document.getElementById('shortInput').value.trim();
+        const target   = document.getElementById('shortTarget').value.trim();
+        const deadline = document.getElementById('shortDeadline').value.trim();
+        if (!text) return;
+            shortGoals.push({ text, target: target ? parseFloat(target) : null, deadline });
+            renderGoals();
+            document.getElementById('shortInput').value    = '';
+            document.getElementById('shortTarget').value   = '';
+            document.getElementById('shortDeadline').value = '';
+            closeDialog('shortForm');
+        };
+        
+        /*ADD LONG TERM GOAL*/
+        document.getElementById('addLongBtn').onclick = () => {
+        const text     = document.getElementById('longInput').value.trim();
+        const target   = document.getElementById('longTarget').value.trim();
+        const deadline = document.getElementById('longDeadline').value.trim();
+        if (!text) return;
+            longGoals.push({ text, target: target ? parseFloat(target) : null, deadline });
+            renderGoals();
+            document.getElementById('longInput').value    = '';
+            document.getElementById('longTarget').value   = '';
+            document.getElementById('longDeadline').value = '';
+            closeDialog('longForm');
+        };
 
     </script>
 </body>
