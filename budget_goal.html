@@ -9,53 +9,66 @@
 
 <body>
     <header>
-        <nav>
-            <button class = "nav-btn" id="openForm">Insert Category</button>
-            <button class = "nav-btn" id="openExpenseForm">Insert Expense</button>
-            <button class = "nav-btn" id="openShortForm">Insert Short Term</button>
-            <button class = "nav-btn" id="openLongForm">Insert Long Term</button>
-        </nav>
+        <div class = "bar">
+            <div class = "tab">Budget</div>
+            <div class = "tab">Goals</div>
+            <button class="plus-btn" id="plusBtn">+</button>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <button class = "nav-btn" id="openForm">Insert Category</button>
+                <button class = "nav-btn" id="openExpenseForm">Insert Expense</button>
+                <button class = "nav-btn" id="openShortForm">Insert Short Term</button>
+                <button class = "nav-btn" id="openLongForm">Insert Long Term</button>
+            </div>
+        </div>
 
         <!-- CATEGORY FORM BUTTON -->
             <dialog id = "categoryForm">
+                <h3>Insert Category</h3>
                 <form method="dialog">
-                    <label for="category">Category:</label>
-                    <input type="text" id="category" name="category" required>
+                    <label for="category">Category Name:</label>
+                    <input type="text" id="category" name="category" placeholder="e.g. Rent, Groceries, etc." required>
                     <br>
-                    <button type="submit">Add</button>
+                    <button type="submit">Submit</button>
                     <button type="button" onclick="this.closest('dialog').close()">Close</button>
                 </form>
             </dialog>
         
         <!-- EXPENSE FORM BUTTON -->
-            <dialog id = "expenseForm">
-                <form method="dialog">
-                    <label for="expense">Expense:</label>
-                    <input type="text" id="expense" name="expense" required>
-                    <br>
-                    <button type="submit">Add</button>
-                    <button type="button" onclick="this.closest('dialog').close()">Close</button>
-                </form>
+            <dialog id="expenseForm">
+                <h3>Insert Expense</h3>
+                <label>Expense Name:</label>
+                <input type="text" id="expInput" placeholder="e.g. Monthly rent" required>
+                <label>Amount ($):</label>
+                <input type="number" id="expAmt" placeholder="0.00" min="0" step="0.01">
+                <label>Category:</label>
+                <select id="expCat"><option value="">— select —</option></select>
+                <div class="dialog-btns">
+                    <button class="dbtn-add" id="addExpBtn">Submit</button>
+                    <button class="dbtn-close" onclick="this.closest('dialog').close()">Cancel</button>
+                </div>
             </dialog>
 
         <!-- SHORT TERM FORM BUTTON -->
             <dialog id = "shortForm">
+                <h3>Insert Short Term Goal</h3>
                 <form method="dialog">
                     <label for="short">Short Term Goal:</label>
                     <input type="text" id="short" name="short" required>
                     <br>
-                    <button type="submit">Add</button>
+                    <button type="submit">Submit</button>
                     <button type="button" onclick="this.closest('dialog').close()">Close</button>
                 </form>
             </dialog>
 
         <!-- LONG TERM FORM BUTTON -->
             <dialog id = "longForm">
+                <h3>Insert Long Term Goal</h3>
                 <form method="dialog">
                     <label for="long">Long Term Goal:</label>
                     <input type="text" id="long" name="long" required>
                     <br>
-                    <button type="submit">Add</button>
+                    <button type="submit">Submit</button>
                     <button type="button" onclick="this.closest('dialog').close()">Close</button>
                 </form>
             </dialog>
@@ -73,6 +86,7 @@
     </table>
 
     <script>
+        const categories = [];
 
         /*FORM BUTTONS*/
             const categoryDialog = document.getElementById('categoryForm');
