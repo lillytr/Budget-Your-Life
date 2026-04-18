@@ -1,27 +1,61 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Budget Your Life</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel= "stylesheet" href = "home.css">
+        
     </head>
 
+
     <body>
-  <div class="menu-btn">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </div>
-  <nav class="main-nav">
-    <div class="logo-container">
-      <p class="logo">Menu</p>
-    </div>
+      <header class ='top-bar'>
+        <button class="money">money </button>
+        <img class = "shop-icon" src="images/shop-icon.png" alt="shopping bag">
+
+
+        <h1 class ="title">Budget Your Life</h1>
+
+
+        <!-- Hamburger Menu -->
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+       <nav class="main-nav">
+      <p class="menu-title">Menu</p>
     <ul class="main-nav-menu">
-      <li><a class="main-nav-link">Home</a></li>
-      <li><a class="main-nav-link">Budget</a></li>
+      <li><a href= "home.html" class ="main-nav-link">Home</a></li>
+      <li><a href="budget_goal.html" class="main-nav-link">Budget</a></li>
     </ul>
   </nav>
-  <script src="index.js"></script>
+
+      </header>
+
+    <div class="charc-space">
+      <img class="charc" src="images/charc.png">
+    </div>
+  <div class ="budget-sec">
+    <ul class="time">
+      <li class="time-li">Day</li>
+      <li class="time-li">Week</li>
+      <li class="time-li">Month</li>
+      <li class="time-li">Year</li>
+
+    </ul>
+
+
+
+
+  </div>
+
+  <!-- Hidden Nav Menu -->
+ 
+  <script src="menu.js"></script>
+  
+
 </body>
 </html>

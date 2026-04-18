@@ -1,103 +1,169 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif
+body {
+  background-color: rgb(255, 225, 233); 
+  margin: 50px
 }
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.main-nav {
+/* Hamburger menu */
+.menu-btn {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 6rem;
-  background-color: #333;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.main-nav-menu {
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
+  align-items: center;
+  flex-direction: column;
 
-li {
-  list-style-type: none;
-}
+  background-color: rgb(148, 0, 40); 
+  width: 50px;              
+  height: 30px;             
+  padding: 5px; 
+  border-radius: 15px;
 
-.main-nav-link {
-  padding: 0 1rem;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.mobile-menu-btn {
-  position: absolute;
-  top: 32px;
-  right: 20px;
+  position: absolute;  
+  top: 50px;           
+  right: 50px;      
+  z-index: 10;   
   cursor: pointer;
-  z-index: 2;
-  display: none;
+}
+.main-nav.show-menu {
+  display: flex;
+  cursor: default;
+}
+.menu-btn:hover + .main-nav {
+  display: flex;
+  opacity: .8;
 }
 
 .btn-line {
-  height: 3px;
-  width: 25px;
-  background-color: #333;
-  margin: 5px 0px;
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  margin: 3px 0;
+}
+.main-nav {
+  background-color: rgb(230, 86, 64);
+  width: 200px;
+  height: 125px;
+
+  border-radius: 15px;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column; 
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.menu-title {
+  color: white;
+  font-size: 15px;
+  font-family: Aria1;
+  padding: 10px 50px 0px 0px;
+  margin: 0;
+
 }
 
 
-@media(max-width: 900px) {
+.main-nav-menu {
+  margin: 0px;
+  list-style: none;
+  padding: 2px 60px 20px 10px;
+}
+.main-nav-link {
 
+  padding: 5px 2.5rem;
+  margin: 5px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
 
-  .mobile-menu-btn {
-    display: block;
-  }
+  background-color: rgb(240, 197, 145);
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav-link:hover {
+  display: flex;
+  text-decoration: underline;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
 
-  .main-nav {
-
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 2rem 4rem;
-    opacity: .9;
-    width: 70%;
-    height: 100%;
-    transform: translateX(-900px);
-    transition: transform .5s ease-in-out;
-  }
-
-  .main-nav-menu {
-    display: block;
-  }
-
-  .main-nav.show {
-    transform: translateX(-20px);
-  }
-
-  .logo {
-    padding-bottom: 20px;
-  }
-
-  li {
-    list-style: none;
-    padding: 10px 0px;
-  }
-
-  .main-nav-link {
-    padding: 0;
-  }
+/* top bar */
+.top-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.title {
+  font-size: 50px;
+  text-align: center;
+  margin: 10px;
+  padding-right: 200px;
 
 }
+.shop-icon{
+  width:50px;
+  height:50px;
+  margin: 10px;
+
+}
+.shop-icon:hover {
+  transform:scale(1.05);
+}
+.money {
+  background-color: rgb(133, 93, 45);
+  width: 200px;
+  height:50px;
+  color:white;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+/* Charcter panel */
+.charc-space {
+  background-color: rgb(245, 200, 212);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+
+  margin: 0 5%;
+  padding: 1rem 0;
+}
+.charc{
+  width: 25%;
+}
+/* Budget section*/
+.budget-sec {
+  background: rgb(148, 0, 40);
+  border-radius: 5px;
+  padding: 1px;
+  margin: 1rem 5%;
+}
+
+/* Time Section*/
+.time {
+  background-color: rgb(230, 86, 64);
+  border-radius: 10px;
+  
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  list-style-type: none;
+  text-decoration: none;
+
+  margin: 1rem 20%;
+  padding: 0rem 5rem;
+
+}
+.time-li {
+  margin: .5rem 1rem;
+}
+
