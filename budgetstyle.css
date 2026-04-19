@@ -12,11 +12,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px;
-    }
-
-a {
-  color: #fff;
-  text-decoration: none;
 }
 
 .app {
@@ -25,7 +20,7 @@ a {
   margin-bottom: 16px;
   padding: 16px;
   width: 100%;
-  max-width: 1300 px;
+  max-width: 1400px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -55,21 +50,21 @@ a {
 }
 
 .home-btn {
-  background: #c55354;
+  background: white;
   border: none;
   border-radius: 50%;
-  width: 45 px;
-  height: 45 px;
+  width: 50px;
+  height: 50px;
   color: #9a0718;
   cursor: pointer;
-  font-size: 24 px;
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   flex-shrink: 0;
   position: relative;
-  z-index: 100;
+  z-index: 0;
   transition: background-color 0.3s ease;
 }
 
@@ -77,11 +72,11 @@ a {
   background: #f2c9a7;
   border: none;
   border-radius: 50%;
-  width: 45 px;
-  height: 45 px;
+  width: 50px;
+  height: 50px;
   color: #c55354;
   cursor: pointer;
-  font-size: 24 px;
+  font-size: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,54 +93,48 @@ a {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 52 px;
+  top: 60px;
   right: 0;
-  background: #ff5757;
-  border-radius: 14 px;
-  padding: 10 px;
+  background: brown;
+  border-radius: 14px;
+  padding: 10px;
   z-index: 200;
-  min-width: 190 px;
-  box-shadow: 0 8px 24 px gray;
+  min-width: 190px;
+  box-shadow: 0 8px 24px gray;
 }
 
 .dropdown-menu.open {
   display: flex;
   flex-direction: column;
-  gap: 8 px;
-}
-
-.dropdown-menu {
-  text-align: center;
-  font-size: 20 px;
-  margin-bottom: 2 px;
+  gap: 8px;
 }
 
 .nav-btn {
   background: #9a0718;
   color: white;
   border: none;
-  border-radius: 30 px;
-  padding: 10 px 20 px;
+  border-radius: 30px;
+  padding: 10px 20px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 12 px;
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .nav-btn:hover {
-  background:#5b1119;
+  background: #5b1119;
 }
 
 /*===============================================================*/
 /* MAINNN */
 
-.main{
+.main {
   background: #d3895f;
-  border-radius: 14 px;
-  padding: 12 px;
+  border-radius: 14px;
+  padding: 12px;
   display: flex;
-  gap: 12 px;
+  gap: 12px;
   flex: 1;
   min-height: 0;
 }
@@ -156,9 +145,9 @@ a {
 .budget-side {
   flex: 1;
   background: #ff5757;
-  border-radius: 100 px;
+  border-radius: 10px;
   overflow: hidden;
-  min-width: none;
+  min-width: 0;
 }
 
 .budget-table {
@@ -167,30 +156,28 @@ a {
 }
 
 .catRow {
-  background:transparent;
-  border:none;
-  width:20px;
+  background: transparent;
+  border: none;
+  width: 20px;
 }
 
 .budget-table th {
   background: #9a0718;
   color: white;
   padding: 8px 4px;
-  font-size: 10 px;
-  border: 1.5 solid black;
-  border-radius: 8 px;
+  font-size: 10px;
+  border: 1.5px solid black;
   text-align: center;
 }
 
 .cat-cell {
   background: #9a0718;
   color: white;
-  padding: 8 px 6px;
-  font-size: 10 px;
-  border: 1.5 solid black;
+  padding: 8px 6px;
+  font-size: 10px;
+  border: 1.5px solid black;
   text-align: center;
   cursor: default;
-  border-radius: 6 px;
   position: relative;
 }
 
@@ -198,56 +185,56 @@ a {
   display: none;
   position: absolute;
   top: 1px;
-  right: 3 px;
+  right: 3px;
   background: none;
   border: none;
   color: #ff9999;
   cursor: pointer;
-  font-size: 10 px;
+  font-size: 10px;
 }
 
-.cat-cell:hover {
+.cat-cell:hover .cat-del {
   display: block;
 }
 
 .budget-table td {
-  background: var(--red-table);
+  background: #FF7F7F;
   border: 1.5px solid black;
   padding: 5px 4px;
   font-size: 11px;
   text-align: center;
   min-width: 70px;
   height: 32px;
-  color: var(--text-dark);
-  }
-    
-  .expense-cell { 
-    cursor: default; 
-  }
-    
-  .expense-cell .exp-del {
-      display: none; 
-      color: #8b0000; 
-      cursor: pointer; 
-      font-size: 10px;
-      background: none; 
-      border: none; 
-      margin-left: 3px;
-    }
-    
-  .expense-cell:hover .exp-del { 
-    display: inline; 
-  }
-  
-  .empty-col-label {
-      color: rgba(90,16,16,0.4);
-      font-size: 10px;
-    }
-    
-  .expenses-label {
-    color: rgba(90,16,16,0.5);
-    font-size: 12px;
-    }
+  color: #5a1010;
+}
+
+.expense-cell { 
+  cursor: default; 
+}
+
+.expense-cell .exp-del {
+  display: none; 
+  color: #8b0000; 
+  cursor: pointer; 
+  font-size: 10px;
+  background: none; 
+  border: none; 
+  margin-left: 3px;
+}
+
+.expense-cell:hover .exp-del { 
+  display: inline; 
+}
+
+.empty-col-label {
+  color: rgba(90,16,16,0.4);
+  font-size: 10px;
+}
+
+.expenses-label {
+  color: rgba(90,16,16,0.5);
+  font-size: 12px;
+}
 
 /*===============================================================*/
 
@@ -273,7 +260,7 @@ a {
   color: black;
   margin-bottom: 10px;
   font-style: italic;
-  }
+}
 
 .priority-item {
   display: flex;
@@ -319,7 +306,6 @@ a {
   background: #d3895f;
 }
 
-
 /*===============================================================*/
 
 /* GOAL popups */
@@ -328,7 +314,7 @@ a {
   display: none;
   position: fixed;
   top: 0; right: 0; left: 0; bottom: 0;
-  background: #5b1119;
+  background: rgba(91,17,25,0.7);
   z-index: 300;
   align-items: center;
   justify-content: center;
@@ -338,20 +324,20 @@ a {
   display: flex;
 }
 
-.goal-popup.inner {
+.goal-popup-inner {
   background: #f2c9a7;
-  border-radius: 16 px;
-  padding: 22 px;
-  min-width: 280 px;
-  max-width: 400 px;
+  border-radius: 16px;
+  padding: 22px;
+  min-width: 280px;
+  max-width: 400px;
   width: 90%;
   position: relative;
 }
 
 .goal-popup-inner h3 {
-  font-size: 18 px;
+  font-size: 18px;
   color: black;
-  margin-bottom: 14 px;
+  margin-bottom: 14px;
   font-style: italic;
 }
 
@@ -359,40 +345,41 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background:#d3895f;
-  border-radius: 8 px;
-  padding: 10 px 12 px;
-  margin-bottom: 8 px;
-  gap: 8 px;
+  background: #d3895f;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  gap: 8px;
 }
 
 .goal-list-item .g-info { 
   flex: 1; 
 }
-    
+
 .goal-list-item .g-name { 
   font-size: 13px; 
   color: black; 
   font-weight: bold; 
 }
-    
+
 .goal-list-item .g-meta { 
   font-size: 10px; 
   color: #8b5050; 
   margin-top: 2px; 
 }
-    
+
 .goal-list-item .g-del {
   background: none; 
   border: none;
-  color: var(--red-mid); 
+  color: #B22222; 
   cursor: pointer; 
   font-size: 15px;
 }
 
 .popup-close {
   position: absolute; 
-  top: 12px; right: 14px;
+  top: 12px; 
+  right: 14px;
   background: none; 
   border: none;
   color: #9a0718; 
@@ -401,7 +388,7 @@ a {
 }
 
 .no-popup-msg {
-  font-size: 12 px;
+  font-size: 12px;
   color: #8b5050;
   font-style: italic;
 }
@@ -409,17 +396,27 @@ a {
 /*===============================================================*/
 /* Dialogs */
 
-dialog::backdrop { 
-  background: gray
+dialog {
+  background: #f2c9a7;
+  border: none;
+  border-radius: 14px;
+  padding: 24px;
+  min-width: 280px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #5a1010;
 }
-    
+
+dialog::backdrop { 
+  background: rgba(0,0,0,0.6);
+}
+
 dialog h3 { 
   margin-bottom: 14px; 
   font-size: 15px; 
   color: #5b1119; 
   font-style: italic; 
 }
-    
+
 dialog label { 
   display: block; 
   font-size: 10px; 
@@ -428,48 +425,45 @@ dialog label {
   color: #8b5050; 
   margin-bottom: 4px; 
 }
-    
+
 dialog input, dialog select {
-      width: 100%; 
-      background: #f2c9a7; 
-      border: 1px solid #d3895f;
-      color: black; 
-      padding: 8px 10px; 
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 13px; 
-      margin-bottom: 12px; 
-      border-radius: 6px;
-    }
+  width: 100%; 
+  background: #f2c9a7; 
+  border: 1px solid #d3895f;
+  color: black; 
+  padding: 8px 10px; 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px; 
+  margin-bottom: 12px; 
+  border-radius: 6px;
+}
 
 .dialog-btns { 
   display: flex; 
   gap: 8px; 
   margin-top: 4px; 
 }
-    
+
 .dbtn-add {
-      background: #5b1119; 
-      color: white; 
-      border: none;
-      border-radius: 20px; 
-      padding: 9px 18px; 
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 12px; 
-      cursor: pointer; 
-      flex: 1;
-    }
-    
+  background: #5b1119; 
+  color: white; 
+  border: none;
+  border-radius: 20px; 
+  padding: 9px 18px; 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px; 
+  cursor: pointer; 
+  flex: 1;
+}
+
 .dbtn-close {
-      background: #d3895f; 
-      color: black; 
-      border: none;
-      border-radius: 20px; 
-      padding: 9px 18px; 
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 12px; 
-      cursor: pointer; 
-      flex: 1;
-    }
-
-
-
+  background: #d3895f; 
+  color: black; 
+  border: none;
+  border-radius: 20px; 
+  padding: 9px 18px; 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px; 
+  cursor: pointer; 
+  flex: 1;
+}
