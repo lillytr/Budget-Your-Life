@@ -150,7 +150,7 @@ body {
 /* BUDGET TABLE DESIGN*/
 .budget-side {
   flex: 1;
-  background: #ff5757;
+  background: #ee8b8b;
   border-radius: 10px;
   overflow: hidden;
   min-width: 0;
@@ -204,7 +204,7 @@ body {
 }
 
 .budget-table td {
-  background: #FF7F7F;
+  background: #e68181;
   border: 1.5px solid black;
   padding: 5px 4px;
   font-size: 11px;
@@ -262,10 +262,11 @@ body {
 }
 
 .priority-box h3 {
-  font-size: 16px;
+  font-size: 35 px;
   color: black;
   margin-bottom: 10px;
   font-style: italic;
+  text-align: center;
 }
 
 .priority-item {
@@ -276,14 +277,16 @@ body {
   background: rgb(245, 200, 212);
   border-radius: 6px;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 20px;
   color: black;
+  text-align: center;
 }
 
 .no-goals-msg { 
-  font-size: 11px; 
-  color: #eb8e5a; 
+  font-size: 15px; 
+  color: lightpink; 
   font-style: italic; 
+  text-align: center;
 }
 
 /*===============================================================*/
@@ -410,6 +413,11 @@ dialog {
   min-width: 280px;
   font-family: 'Times New Roman', Times, serif;
   color: #5a1010;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 dialog::backdrop { 
