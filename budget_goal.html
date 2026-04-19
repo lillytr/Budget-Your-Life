@@ -15,10 +15,10 @@
             <a href="home.html"><button class="home-btn" id="homeBtn">=</button></a>
             <button class="plus-btn" id="plusBtn">+</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <button class="nav-btn" id="openForm">Insert Category</button>
-                <button class="nav-btn" id="openExpenseForm">Insert Expense</button>
-                <button class="nav-btn" id="openShortForm">Insert Short Term</button>
-                <button class="nav-btn" id="openLongForm">Insert Long Term</button>
+                <button class="nav-btn" onclick="openDialog('categoryForm')">Insert Category</button>
+                <button class="nav-btn" onclick="openDialog('expenseForm')">Insert Expense</button>
+                <button class="nav-btn" onclick="openDialog('shortForm')">Insert Short Term</button>
+                <button class="nav-btn" onclick="openDialog('longForm')">Insert Long Term</button>
             </div>
         </div>
     </header>
@@ -46,6 +46,22 @@
                 <button class="goal-tab-btn" onclick="openGoalPopup('short')">Short Term</button>
                 <button class="goal-tab-btn" onclick="openGoalPopup('long')">Long Term</button>
             </div>
+        </div>
+    </div>
+
+    <!-- GOAL POPUPS -->
+    <div class="goal-popup" id="shortPopup">
+        <div class="goal-popup-inner">
+            <button class="popup-close" onclick="closeGoalPopup('short')">✕</button>
+            <h3>Short Term Goals</h3>
+            <div id="shortGoalPopupList"><p class="no-popup-msg">No short-term goals yet.</p></div>
+        </div>
+    </div>
+    <div class="goal-popup" id="longPopup">
+        <div class="goal-popup-inner">
+            <button class="popup-close" onclick="closeGoalPopup('long')">✕</button>
+            <h3>Long Term Goals</h3>
+            <div id="longGoalPopupList"><p class="no-popup-msg">No long-term goals yet.</p></div>
         </div>
     </div>
 
@@ -102,9 +118,6 @@
         </div>
     </dialog>
 
-
-    <!-- JAVASCRIPT -->
     <script src="budgetscript.js"></script>
-
 </body>
 </html>
