@@ -8,12 +8,18 @@
 </head>
 
 <body>
-    <header>
+    <div class="app">
         <div class="bar">
+            
+            <!-- This is the two tabs at the top -->
             <div class="tab">Budget</div>
             <div class="tab">Goals</div>
-            <a href="home.html"><button class="home-btn" id="homeBtn">=</button></a>
+
+            <!-- Home Button and Plus Button -->
+            <a href="home.html"><button class="home-btn" id="homeBtn">=</button></a> <!--FIX HOME does not work with img...-->
             <button class="plus-btn" id="plusBtn">+</button>
+
+            <!-- Dropdown Menu -->
             <div class="dropdown-menu" id="dropdownMenu">
                 <button class="nav-btn" onclick="openDialog('categoryForm')">Insert Category</button>
                 <button class="nav-btn" onclick="openDialog('expenseForm')">Insert Expense</button>
@@ -21,7 +27,6 @@
                 <button class="nav-btn" onclick="openDialog('longForm')">Insert Long Term</button>
             </div>
         </div>
-    </header>
 
     <div class="main">
         <!-- TABLE -->
@@ -29,7 +34,6 @@
             <table class="budget-table" id="budgetTable">
                 <thead>
                     <tr id="catRow">
-                        <th style="background:transparent;border:none;width:20px;"></th>
                     </tr>
                 </thead>
                 <tbody id="expenseBody"></tbody>
@@ -48,6 +52,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <!-- GOAL POPUPS -->
     <div class="goal-popup" id="shortPopup">

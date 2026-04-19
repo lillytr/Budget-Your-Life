@@ -3,7 +3,7 @@ const shortGoals = [];
 const longGoals  = [];
 const NUM_ROWS   = 8;
 
-// + BUTTON DROPDOWN
+// PLUS BUTTON DROPDOWN
 const plusBtn      = document.getElementById('plusBtn');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -230,6 +230,4 @@ document.getElementById('addLongBtn').onclick = () => {
 };
 
 
-
-// run on load
 renderTable();
