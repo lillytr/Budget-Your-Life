@@ -349,7 +349,9 @@ background-color: darkgrey;
 .dropdown-item:hover {
   background-color: rgb(231, 94, 94);
   cursor: pointer;
-  trasn
 }
-
-
+.money-icon {
+  width: 30px;
+  height: 30px;
+  align-items: left;
+}

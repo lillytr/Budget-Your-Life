@@ -69,30 +69,46 @@ itemList("eyesTab", "eyes", 9, "eyeLayer");
 
 
 
-  // RENDER SHIRTS ONLY
-  function renderShop(type, max,layer) {
-    shopItems.innerHTML = "";
+function renderShop(type, max, layer) {
+  shopItems.innerHTML = "";
 
-    let maxItems = max; // or more later
+  for (let i = 1; i <= max; i++) {
 
-    for (let i = 1; i <= maxItems; i++) {
+    const item = document.createElement("div");
+    item.className = "item";
 
-      const item = document.createElement("div");
-      item.className = "item";
+  
+    let price = 0;
 
-      item.innerHTML = `
-        <img src="images/${type}/icon/${i}.png" width="60">
-      `;
+    if (
+      type === "shirts" ||
+      type === "pants" ||
+      type === "shoes" ||
+      type === "dresses"
+    ) {
+      price = 20; 
+    }
 
-      item.onclick = function () {
+    item.innerHTML = `
+      <img src="images/${type}/icon/${i}.png" width="60">
+    `;
+
+    item.onclick = function () {
+
+      if (price === 0 || spendCoins(price)) {
+
         document.getElementById(layer).src =
           `images/${type}/display/${i}.png`;
-      };
 
-      shopItems.appendChild(item);
+        saveData(); 
 
-      
-    }
+      }
+
+    };
+
+    shopItems.appendChild(item);
+
   }
+}
 
 });
