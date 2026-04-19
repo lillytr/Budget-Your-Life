@@ -91,6 +91,7 @@ function renderTable() {
       removeCatOption(categories[ci].name);
       categories.splice(ci, 1);
       renderTable();
+      saveData();
     };
   });
   body.querySelectorAll('.exp-del').forEach(btn => {
@@ -99,6 +100,7 @@ function renderTable() {
       const ri = parseInt(btn.dataset.ri);
       categories[ci].expenses.splice(ri, 1);
       renderTable();
+      saveData();
     };
   });
 }              
@@ -145,6 +147,7 @@ function renderGoalPopupList(containerId, list, type) {
     if (g.target) meta.push(`$${g.target.toLocaleString()}`);
     if (g.deadline) meta.push(g.deadline);
     div.innerHTML = `
+      <input type="checkbox" class="g-check" data-type="${type}" data-idx="${idx}">
       <div class="g-info">
         <div class="g-name">${g.text}</div>
         ${meta.length ? `<div class="g-meta">${meta.join(' · ')}</div>` : ''}
@@ -153,12 +156,34 @@ function renderGoalPopupList(containerId, list, type) {
     el.appendChild(div);
   });
 
+  // CHECKBOX - complete goal and give coins
+  el.querySelectorAll('.g-check').forEach(box => {
+    box.onchange = () => {
+      if (!box.checked) return;
+      const idx  = parseInt(box.dataset.idx);
+      const list = box.dataset.type === 'short' ? shortGoals : longGoals;
+      const goal = list[idx];
+
+      // bonus coins
+      const bonus = goal.target ? Math.floor(goal.target / 10) : 25;
+      addCoins(bonus);
+      showCoinPopup(bonus, goal.text);
+
+      // remove the goal
+      list.splice(idx, 1);
+      renderGoals();
+      saveData();
+    };
+  });
+
+  // DELETE
   el.querySelectorAll('.g-del').forEach(btn => {
     btn.onclick = () => {
       const idx = parseInt(btn.dataset.idx);
       if (btn.dataset.type === 'short') shortGoals.splice(idx, 1);
       else longGoals.splice(idx, 1);
       renderGoals();
+      saveData();
     };
   });
 }
@@ -184,6 +209,7 @@ document.getElementById('addCatBtn').onclick = () => {
   renderTable();
   document.getElementById('catInput').value = '';
   closeDialog('categoryForm');
+  saveData();
 };
 
 // ADD EXPENSE
@@ -199,6 +225,7 @@ document.getElementById('addExpBtn').onclick = () => {
   document.getElementById('expAmt').value   = '';
   document.getElementById('expCat').value   = '';
   closeDialog('expenseForm');
+  saveData();
 };
 
 // ADD SHORT GOAL
@@ -213,6 +240,7 @@ document.getElementById('addShortBtn').onclick = () => {
   document.getElementById('shortTarget').value   = '';
   document.getElementById('shortDeadline').value = '';
   closeDialog('shortForm');
+  saveData();
 };
 
 // ADD LONG GOAL
@@ -227,7 +255,32 @@ document.getElementById('addLongBtn').onclick = () => {
   document.getElementById('longTarget').value   = '';
   document.getElementById('longDeadline').value = '';
   closeDialog('longForm');
+  saveData();
 };
 
 
+//SAVE DATA
+function saveData() {
+    localStorage.setItem('categories', JSON.stringify(categories));
+    localStorage.setItem('shortGoals', JSON.stringify(shortGoals));
+    localStorage.setItem('longGoals', JSON.stringify(longGoals));
+}
+
+// LOAD DATA
+function loadData() {
+    const savedCats  = localStorage.getItem('categories');
+    const savedShort = localStorage.getItem('shortGoals');
+    const savedLong  = localStorage.getItem('longGoals');
+
+    if (savedCats)  categories.push(...JSON.parse(savedCats));
+    if (savedShort) shortGoals.push(...JSON.parse(savedShort));
+    if (savedLong)  longGoals.push(...JSON.parse(savedLong));
+
+    // rebuild the category dropdown
+    categories.forEach(cat => addCatOption(cat.name));
+}
+
+
+loadData();
 renderTable();
+renderGoals();

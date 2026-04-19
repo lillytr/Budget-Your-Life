@@ -29,6 +29,12 @@ body {
 
 /*TOP DESIGN*/
 
+.money-icon {
+  width: 30px;
+  height: 30px;
+  align-items: left;
+}
+
 .bar {
   display: flex;
   gap: 12px;
@@ -401,6 +407,72 @@ body {
   color: #8b5050;
   font-style: italic;
 }
+/*===============================================================*/
+
+/* COIN popups */
+.coin-popup {
+  display: flex;
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: rgba(91,17,25,0.7);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin-popup-inner {
+  background: #f2c9a7;
+  border-radius: 16px;
+  padding: 22px;
+  min-width: 280px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.coin-popup-title {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.coin-popup-goal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #d3895f;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.coin-popup-reward {
+  font-size: 20px; 
+  color: black; 
+  font-weight: bold;
+}
+
+.coin-popup-close {
+  position: absolute; 
+  top: 12px; 
+  right: 14px;
+  background: none; 
+  border: none;
+  color: #9a0718; 
+  font-size: 20px; 
+  cursor: pointer;
+}
+
+.g-check {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8b5050;
+}
+
 
 /*===============================================================*/
 /* Dialogs */
