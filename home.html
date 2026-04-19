@@ -15,11 +15,6 @@
 
         <!-- This is the shop display -->
         <img class = "shop-icon" id ="shopBtn" src="images/shop-icon.png" alt="shopping bag">
-
-        <!-- Start of pop up window  -->
-        
-
-
         <h1 class ="title">Budget Your Life</h1>
 
 
@@ -50,10 +45,33 @@
             
             <ul class = "tabs"> 
               <li class = "tab-name" id = "inv">Inventory</li>
-              <li class = "tab-name" id = "hairtab">Hair</li>
-              <li class = "tab-name" id = "faceTab">Face</li>
-              <li class = "tab-name" id = "shirtTab">Shirts</li>
-              <li class = "tab-name" id = "pantTab">Pants</li>
+
+              <li class = "tab-name" id = "hairTab">Hair
+              <ul class="dropdown-menu" id="hairMenu">
+                  <li class="dropdown-item" id="bangsTab">Bangs</li>
+                  <li class="dropdown-item" id="lhairsTab">Long hair</li>
+                  <li class="dropdown-item" id="extraTab">Extra</li>
+                </ul>
+              </li>
+
+              <li class = "tab-name" id = "faceTab">Face
+              <ul class="dropdown-menu" id="faceMenu">
+                  <li class="dropdown-item" id="eyelashesTab">Eyelashes</li>
+                  <li class="dropdown-item" id="eyebrowTab">Eyebrows</li>
+                  <li class="dropdown-item" id="skinTab">Skincolor</li>
+                  <li class="dropdown-item" id="eyesTab">eyes</li>
+                </ul>
+              </li>
+                
+              <li class = "tab-name" id = "clothesTab">Clothes
+                <ul class="dropdown-menu" id="clothesMenu">
+                  <li class="dropdown-item" id="topsTab">Tops</li>
+                  <li class="dropdown-item" id="pantsTab">Pants</li>
+                  <li class="dropdown-item" id="dressesTab">Dresses</li>
+                  <li class="dropdown-item" id="shoesTab">Shoes</li>
+                </ul>
+              </li>
+
               <span id="closeBtn">&times;</span>
             </ul>
             <div id="shopItems"></div>

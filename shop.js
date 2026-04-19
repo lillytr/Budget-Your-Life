@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  //open and closing shop 
   const shopBtn = document.getElementById("shopBtn");
   const closeBtn = document.getElementById("closeBtn");
   const shopModal = document.getElementById("shopModal");
-  const shirtTab = document.getElementById("shirtTab");
-  const shopItems = document.getElementById("shopItems");
 
-  // OPEN SHOP
+    // OPEN SHOP
   shopBtn.onclick = function () {
     shopModal.style.display = "block";
     renderShirts();
@@ -16,11 +15,41 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.onclick = function () {
     shopModal.style.display = "none";
   };
+  
+  //Header tabs 
+  const hairTab = document.getElementById("hairTab");
+  const hairMenu = document.getElementById("hairMenu");
+
+  const faceTab = document.getElementById("faceTab");
+  const faceMenu = document.getElementById("faceMenu");
+
+  const clothesTab = document.getElementById("clothesTab");
+  const clothesMenu = document.getElementById("clothesMenu");
+  const topsTab = document.getElementById("topsTab");
+  
+  
+  const shirtTab = document.getElementById("shirtTab");
+  const shopItems = document.getElementById("shopItems");
+
+
 
   // TAB CLICK
-  shirtTab.onclick = function () {
-    renderShop("shirts", 12, "shirtLayer");
+  hairTab.onclick = function () {
+    hairMenu.classList.toggle("show");
   };
+
+  faceTab.onclick = function () {
+    faceMenu.classList.toggle("show");
+  };
+
+  clothesTab.onclick = function () {
+    clothesMenu.classList.toggle("show");
+  };
+
+  topsTab.onclick = function () {
+    renderShop("shirts", 12, "topsTab");
+  };
+
 
 
 

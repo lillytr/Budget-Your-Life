@@ -143,9 +143,7 @@ body {
 }
 .shirt-layer{
   position: absolute;
-
   width: 25%;
-
   left:  109px;
 
 }
@@ -183,7 +181,7 @@ body {
   background: white;
  
   width: 500px;
-  height: 300px;
+  height: 400px;
   margin:auto;
  
   z-index: 9;
@@ -207,6 +205,7 @@ body {
 
 }
 .tab-name{
+  position:relative;
   list-style: none;
   margin: 5px;
 }
@@ -260,3 +259,34 @@ background-color: darkgrey;
   padding: 0;
   
 }
+
+.dropdown-menu {
+  display: none;  /* hidden at start */
+  flex-direction: column;
+
+
+  position: absolute;
+  top: 100%;   /* ⭐ puts it BELOW tab */
+  left: 0;
+
+  background: white;
+
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+
+  border: 1px solid rgb(115, 115, 115);
+  border-radius: 6px;
+
+  min-width: 50px;
+
+  z-index: 1000;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-item:hover {
+  background-color: grey;
+}
+
+
