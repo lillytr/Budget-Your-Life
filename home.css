@@ -137,15 +137,74 @@ body {
   padding: 1rem 0;
 
 }
-.charc{
-  width: 25%;
+.char-display {
+  position: relative;   /* ⭐ makes layers stack correctly */
+  width: 25%;           /* controls character size */
   margin: auto;
 }
-.shirt-layer{
-  position: absolute;
-  width: 25%;
-  left:  109px;
 
+
+
+/* All wearable layers share same position */
+.dress-layer,
+.mouth-layer,
+.eye-layer,
+.shirt-layer,
+.pant-layer,
+.lhair-layer,
+.hair-layer,
+.bang-layer,
+.shoe-layer,
+.eyelashes-layer {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none; /* prevents blocking clicks */
+}
+
+
+/* Base character */
+.charc {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;   /* character in the middle */
+}
+
+/* Behind character */
+.lhair-layer {
+  z-index: 1;   /* behind char */
+}
+
+.pant-layer {
+  z-index: 3;
+}
+
+/* In front of character */
+.shirt-layer {
+  z-index: 4;
+}
+
+.shoe-layer {
+  z-index: 5;
+}
+
+.bang-layer {
+  z-index: 6;
+}
+.hair-layer {
+  z-index: 6;
+}
+.dress-layer,
+.mouth-layer,
+.eye-layer,
+.eyelashes-layer {
+  z-index: 7;
 }
 /* Budget section*/
 .budget-sec {
@@ -212,6 +271,7 @@ body {
 .tab-name:hover{
   background-color: darkgray;
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 #closeBtn {
@@ -231,32 +291,32 @@ background-color: darkgrey;
 
 #shopItems {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 
   width: 400px;
   max-height: 300px;
 
   overflow-y: auto;  
-  padding: 10px;
+  padding-top: 10px;
   margin:auto;
   z-index: 999;
 }
 .item{
   background-color: aliceblue;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  width: 60px;
-  height: 60px;
-;
-  
+  width: 70px;
+  height: 70px;  
   border: 2px solid rgb(154, 144, 144);
 }
 .item img{
   object-fit: cover;
-
   margin: 0;
   padding: 0;
+  cursor: pointer;
   
 }
 
@@ -278,15 +338,18 @@ background-color: darkgrey;
   border: 1px solid rgb(115, 115, 115);
   border-radius: 6px;
 
-  min-width: 50px;
-
+  min-width: 70px;
   z-index: 1000;
+  cursor: pointer;
 }
 .dropdown-menu.show {
   display: block;
+  cursor: pointer;
 }
 .dropdown-item:hover {
-  background-color: grey;
+  background-color: rgb(231, 94, 94);
+  cursor: pointer;
+  trasn
 }
 
 

@@ -17,14 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   
   //Header tabs 
-  const hairTab = document.getElementById("hairTab");
-  const hairMenu = document.getElementById("hairMenu");
-
-  const faceTab = document.getElementById("faceTab");
-  const faceMenu = document.getElementById("faceMenu");
-
-  const clothesTab = document.getElementById("clothesTab");
-  const clothesMenu = document.getElementById("clothesMenu");
   const topsTab = document.getElementById("topsTab");
   
   
@@ -33,28 +25,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  // TAB CLICK
-  hairTab.onclick = function () {
-    hairMenu.classList.toggle("show");
-  };
 
-  faceTab.onclick = function () {
-    faceMenu.classList.toggle("show");
-  };
+// drop down toggle menu 
+function setupDropdown(tabId, menuId) {
+  const tab = document.getElementById(tabId);
+  const menu = document.getElementById(menuId);
 
-  clothesTab.onclick = function () {
-    clothesMenu.classList.toggle("show");
+  tab.onclick = function () {
+    menu.classList.toggle("show");
   };
+}
 
-  topsTab.onclick = function () {
-    renderShop("shirts", 12, "topsTab");
+// Set up all dropdowns
+setupDropdown("hairTab", "hairMenu");
+setupDropdown("faceTab", "faceMenu");
+setupDropdown("clothesTab", "clothesMenu");
+
+
+
+//toggle item list 
+function itemList(tabId, type, max,layer) {
+  const tab = document.getElementById(tabId);
+
+  tab.onclick = function () {
+    renderShop(type, max, layer);
   };
+}
+itemList("topsTab", "shirts", 12, "shirtLayer");
+itemList("pantsTab", "pants", 8, "pantLayer");
+itemList("shoesTab", "shoes", 4, "shoeLayer");
+itemList("bangsTab", "bangs", 13, "bangLayer");
+itemList("dressesTab", "dresses", 7, "dressLayer");
+itemList("eyelashesTab", "eyelashes", 5, "eyelashesLayer");
+itemList("lhairsTab", "lhairs", 12, "lhairLayer");
+itemList("hairsTab", "hairs", 12, "hairLayer");
+itemList("eyesTab", "eyes", 9, "eyeLayer");
+
+
+  // TAB CLIC
+
+
 
 
 
 
   // RENDER SHIRTS ONLY
-  function renderShop(type, max, id) {
+  function renderShop(type, max,layer) {
     shopItems.innerHTML = "";
 
     let maxItems = max; // or more later
@@ -69,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
 
       item.onclick = function () {
-        document.getElementById(id).src =
+        document.getElementById(layer).src =
           `images/${type}/display/${i}.png`;
       };
 
