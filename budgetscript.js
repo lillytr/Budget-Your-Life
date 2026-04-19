@@ -1,7 +1,7 @@
 const categories = [];
 const shortGoals = [];
 const longGoals  = [];
-const NUM_ROWS   = 8;
+const NUM_ROWS   = 23;
 
 // PLUS BUTTON DROPDOWN
 const plusBtn      = document.getElementById('plusBtn');
@@ -68,7 +68,7 @@ function renderTable() {
       td.className = 'expense-cell';
       const exp = cat.expenses[r];
       if (exp) {
-        td.innerHTML = `${exp.name}${exp.amount !== null ? '<br><small style="color:#8b0000;">$'+exp.amount.toFixed(2)+'</small>' : ''}<button class="exp-del" data-ci="${ci}" data-ri="${r}">✕</button>`;
+        td.innerHTML = `${exp.name}${exp.amount !== null ? '<br><small style="color:#8b0000;">$'+exp.amount.toFixed(2)+'</small>' : ''}<button class="exp-del" data-ci="${ci}" data-ri="${r}">X</button>`;
       } else if (r === 0 && cat.expenses.length === 0) {
         td.innerHTML = `<span class="empty-col-label">expenses</span>`;
       }
